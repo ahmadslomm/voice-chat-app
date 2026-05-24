@@ -1,0 +1,5 @@
+{
+	"appId": "com.voicechat.app",
+	"appName": "Voice Chat",
+	"webDir": "dist"
+}
