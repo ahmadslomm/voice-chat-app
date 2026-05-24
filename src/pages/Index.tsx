@@ -44,11 +44,10 @@ const Index: React.FC = () => {
 
   const { setLocale } = useLocale();
 
-  // Redirect to login if not authenticated
   React.useEffect(() => {
-    if (!AuthService.getCurrentUser()) {
-      navigate("/auth/login");
-    }
+    AuthService.getAccessToken().then(token => {
+      if (!token) navigate("/auth/login");
+    });
   }, [navigate]);
   
   React.useEffect(() => {
