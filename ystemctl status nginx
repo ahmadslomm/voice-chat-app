@@ -1,0 +1,12 @@
+[0;1;32m●[0m voicechat.service - Voice Chat App
+     Loaded: loaded (/etc/systemd/system/voicechat.service; enabled; vendor preset: enabled)
+     Active: [0;1;32mactive (running)[0m since Sun 2026-05-24 10:42:05 UTC; 43s ago
+   Main PID: 1242642 (MainThread)
+      Tasks: 11 (limit: 19038)
+     Memory: 31.6M
+        CPU: 231ms
+     CGroup: /system.slice/voicechat.service
+             └─1242642 node /usr/bin/serve -s dist -l 80
+
+May 24 10:42:05 ahmad systemd[1]: Started Voice Chat App.
+May 24 10:42:05 ahmad serve[1242642]:  INFO  Accepting connections at http://localhost:38157
