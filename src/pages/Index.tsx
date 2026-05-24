@@ -43,6 +43,13 @@ const Index: React.FC = () => {
   const userStatus = UserProfileService.getUserStatus(userId);
 
   const { setLocale } = useLocale();
+
+  // Redirect to login if not authenticated
+  React.useEffect(() => {
+    if (!AuthService.getCurrentUser()) {
+      navigate("/auth/login");
+    }
+  }, [navigate]);
   
   React.useEffect(() => {
     // Force Arabic + RTL for this design
