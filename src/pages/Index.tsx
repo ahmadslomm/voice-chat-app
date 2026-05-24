@@ -45,10 +45,11 @@ const Index: React.FC = () => {
   const { setLocale } = useLocale();
 
   React.useEffect(() => {
-    localStorage.removeItem('user');
-    localStorage.removeItem('currentUser');
     AuthService.getAccessToken().then(token => {
-      if (!token) navigate("/auth/login");
+      if (!token) {
+        localStorage.removeItem('auth:user');
+        navigate("/auth/login");
+      }
     });
   }, [navigate]);
   
